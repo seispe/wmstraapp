@@ -14,7 +14,7 @@ export class WebServiceService {
   ping(){
     let headers = new HttpHeaders();
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.get('http://192.168.0.247:81/wswms/ajax/usuario.php?op=ping', {headers: headers});
+    return this.http.get('http://192.168.0.214:81/wswms/ajax/usuario.php?op=ping', {headers: headers});
   }
 
   login(usuario:string,password:string){
@@ -22,7 +22,7 @@ export class WebServiceService {
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
 
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/usuario.php?op=login',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/usuario.php?op=login',JSON.stringify({
     "usuario":usuario,
     "clave":password}),{headers:headers});
   }
@@ -32,7 +32,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/usuario.php?op=validarCoordenada',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/usuario.php?op=validarCoordenada',JSON.stringify({
     "coordenada":coordenada}),{headers:headers});
   }
 
@@ -40,7 +40,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/usuario.php?op=validarProducto',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/usuario.php?op=validarProducto',JSON.stringify({
     "codigo":codigo}),{headers:headers});
   }
 
@@ -49,7 +49,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/usuario.php?op=inforArtiCoor',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/usuario.php?op=inforArtiCoor',JSON.stringify({
     "codigo":codigo,
     "coordenada":coordenada,
   }),{headers:headers});
@@ -61,7 +61,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/usuario.php?op=movimientos',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/usuario.php?op=movimientos',JSON.stringify({
     "coorInicio":coorInicio,
     "coorFin":coorFin,
     "cantidad":cantidad,
@@ -75,7 +75,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/usuario.php?op=busquedaProd',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/usuario.php?op=busquedaProd',JSON.stringify({
     "producto":producto
   }),{headers:headers});
   }
@@ -84,7 +84,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/bahias.php?op=bahiasxbultos',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/bahias.php?op=bahiasxbultos',JSON.stringify({
       "bulto":bulto,
       "bahia":bahia,
       "usuario":usuario
@@ -95,7 +95,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/logistica.php?op=getPedido',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/logistica.php?op=getPedido',JSON.stringify({
       "pedido":pedido
     }),{headers:headers});
   }
@@ -104,7 +104,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/logistica.php?op=insLogistica',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/logistica.php?op=insLogistica',JSON.stringify({
       "pedido":pedido,
       "usuario":usuario
     }),{headers:headers});
@@ -113,7 +113,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/logistica.php?op=cargaCamion',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/logistica.php?op=cargaCamion',JSON.stringify({
       "pedido":pedido,
       "camion":camion,
       "transportista":transportista,
@@ -124,7 +124,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/logistica.php?op=getTrans',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/logistica.php?op=getTrans',JSON.stringify({
       "pedido":pedido,
       "opcion":opcion
     }),{headers:headers});
@@ -134,7 +134,7 @@ export class WebServiceService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/usuario.php?op=claveEmpresa',{headers:headers});
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/usuario.php?op=claveEmpresa',{headers:headers});
   }
 
 

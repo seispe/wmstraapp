@@ -15,7 +15,7 @@ export class WsPickingService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/picking.php/?op=consolidados',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/picking.php/?op=consolidados',JSON.stringify({
     "usuario":usuario
   }),{headers:headers});
   }
@@ -24,7 +24,7 @@ export class WsPickingService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/picking.php/?op=consolidadosArea',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/picking.php/?op=consolidadosArea',JSON.stringify({
     "area":area,
     "op":op,
   }),{headers:headers});
@@ -34,7 +34,7 @@ export class WsPickingService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/picking.php/?op=obtenerProductosConsolidado',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/picking.php/?op=obtenerProductosConsolidado',JSON.stringify({
     "consolidado":consolidado,
     "usuario":usuario,
     "area":area
@@ -45,7 +45,7 @@ export class WsPickingService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/picking.php/?op=cantidadPicking',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/picking.php/?op=cantidadPicking',JSON.stringify({
     "consolidado":consolidado,
     "producto":producto,
     "usuario":usuario,
@@ -58,7 +58,7 @@ export class WsPickingService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/picking.php/?op=cantidadPickingPendiente',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/picking.php/?op=cantidadPickingPendiente',JSON.stringify({
     "consolidado":consolidado,
     "producto":producto,
     "usuario":usuario,
@@ -70,7 +70,7 @@ export class WsPickingService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/picking.php/?op=validarCoordenadaPicking',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/picking.php/?op=validarCoordenadaPicking',JSON.stringify({
     "coordenada":coordenada
   }),{headers:headers});
   }
@@ -79,7 +79,7 @@ export class WsPickingService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/picking.php/?op=validarCantidad',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/picking.php/?op=validarCantidad',JSON.stringify({
       "consolidado":consolidado,
       "producto":producto,
       "cantidad":cantidad
@@ -90,7 +90,7 @@ export class WsPickingService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/picking.php/?op=guardarPicking',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/picking.php/?op=guardarPicking',JSON.stringify({
       "consolidado":consolidado,
       "producto":producto,
       "origen":origen,
@@ -106,7 +106,7 @@ export class WsPickingService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Accept', 'application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/picking.php?op=product_consolidados',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/picking.php?op=product_consolidados',JSON.stringify({
     "consolidado":consolidado,
     "usuario":usuario,
     "area":area

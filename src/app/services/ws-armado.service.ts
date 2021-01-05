@@ -13,7 +13,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=getImpresoras',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=getImpresoras',JSON.stringify({
       "usuario":usuario,
       "tipo":tipo
     }),{headers:headers});
@@ -23,7 +23,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=getInfoArmado',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=getInfoArmado',JSON.stringify({
       "bulto":bulto
     }),{headers:headers});
   }
@@ -32,7 +32,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=colaImpresion',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=colaImpresion',JSON.stringify({
       "op":op,
       "bulto":bulto,
       "usuario":usuario,
@@ -49,7 +49,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=audImpresion',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=audImpresion',JSON.stringify({
       "pedidos":pedidos,
       "usuario":usuario,
       "modulo":modulo,
@@ -62,7 +62,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=getPedidos',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=getPedidos',JSON.stringify({
       "filtro":filtro,
       "area":area,
       "op":op,
@@ -73,7 +73,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=validarCoordenadaArmado',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=validarCoordenadaArmado',JSON.stringify({
       "coordenada":coordenada,
       "tipo":tipo
     }),{headers:headers});
@@ -83,7 +83,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=pedDetProceso',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=pedDetProceso',JSON.stringify({
       "pedido":pedido,
       "producto":producto,
       "op":op,
@@ -96,7 +96,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=detProcPed',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=detProcPed',JSON.stringify({
       "pedido":pedido,
       "usuario":usuario,
       "area":area,
@@ -107,7 +107,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=getBultos',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=getBultos',JSON.stringify({
       "usuario":usuario,
       "op":op,
     }),{headers:headers});
@@ -117,7 +117,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=insBultos',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=insBultos',JSON.stringify({
       "estado":estado,
       "usuario":usuario,
     }),{headers:headers});
@@ -127,7 +127,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=validarVoid',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=validarVoid',JSON.stringify({
       "codigo":codigo,
       "op":op,
     }),{headers:headers});
@@ -137,7 +137,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=getDetArmado',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=getDetArmado',JSON.stringify({
       "codigo":codigo,
       "pedido":pedido,
       "area":area,
@@ -149,7 +149,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=validaBulto',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=validaBulto',JSON.stringify({
       "op":op,
       "idbulto":idbulto,
       "pedido":pedido,
@@ -161,7 +161,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=insArmado',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=insArmado',JSON.stringify({
       "pedido":pedido,
       "producto":producto,
       "coor_origen":coor_origen,
@@ -180,7 +180,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=cierreArmado',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=cierreArmado',JSON.stringify({
       "pedido":pedido,
       "area":area,
     }),{headers:headers});
@@ -190,7 +190,7 @@ loading: any;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type','application/json; charset=utf-8');
     headers = headers.set('Accept','application/json; charset=utf-8');
-    return this.http.post('http://192.168.0.247:81/wswms/ajax/armado.php/?op=artDetArm',JSON.stringify({
+    return this.http.post('http://192.168.0.214:81/wswms/ajax/armado.php/?op=artDetArm',JSON.stringify({
       "pedido":pedido,
       "op":op,
       "area":area,

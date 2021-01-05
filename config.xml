@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ec.com.iav.wms" version="0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>WMSIAV</name>
-    <description>WMS IAV</description>
-    <author email="sistemas@iav.com.ec" href="http://ventas.iav.com.ec">GRUPO ALVARADO</author>
+<widget id="ec.com.tra.wms" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>WMSTRA</name>
+    <description>WMS TRA</description>
+    <author email="sistemas@iav.com.ec" href="http://ventas.rectima.com.ec">GRUPO ALVARADO</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
