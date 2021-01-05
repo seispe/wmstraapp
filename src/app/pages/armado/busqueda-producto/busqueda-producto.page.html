@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button text="atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Artículo</ion-title>
+  </ion-toolbar>
+  <ion-searchbar  animated [(ngModel)]="texto"  color="light" showCancelButton="true" placeholder="Ingrese el código" (keyup.enter)="onEnter()"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label color="primary"  position="floating">Producto:</ion-label>
+            <ion-input  readonly  clearInput="true" [(ngModel)]="producto"  inputmode="text"  ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+            <ion-item>
+              <ion-label color="primary"  position="floating">Rotación:</ion-label>
+              <ion-input color="success" *ngIf="color_rotacion=='ALTA'"  readonly  clearInput="true" [(ngModel)]="rotacion"   inputmode="text"  ></ion-input>
+              <ion-input color="warning" *ngIf="color_rotacion=='MEDIA'"  readonly  clearInput="true" [(ngModel)]="rotacion"   inputmode="text"  ></ion-input>
+              <ion-input color="danger" *ngIf="color_rotacion=='BAJA'"  readonly  clearInput="true" [(ngModel)]="rotacion"   inputmode="text"  ></ion-input>
+           </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item>
+      <ion-label color="primary" position="floating">Descripción:</ion-label>
+      <ion-textarea  clearInput="true" readonly  rows="10" cols="20" [(ngModel)]="descripcion" placeholder="Coordenadas de productos" required="true"></ion-textarea>
+      <ion-icon name="list" color="primary" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" position="floating">Ubicación:</ion-label>
+      <ion-textarea  clearInput="true" readonly  rows="10" cols="20" [(ngModel)]="ubicacion" placeholder="Coordenadas de productos" required="true"></ion-textarea>
+      <ion-icon name="pin" color="primary" slot="end"></ion-icon>
+    </ion-item>
+    
+  </ion-list>
+
+</ion-content>

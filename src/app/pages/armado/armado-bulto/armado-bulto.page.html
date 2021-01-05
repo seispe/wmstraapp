@@ -1,0 +1,162 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="msgBulto(2)">atrás
+        <ion-icon name="arrow-back" color="light" slot="start" ></ion-icon>
+      </ion-button>
+      
+    </ion-buttons>
+    <ion-title>ARMADO
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <p style="font-size: 0.9rem;"><strong>{{pedido}}</strong></p>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <p style="font-size: 0.9rem;"><strong>{{ciudad}}</strong></p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+ 
+  <ion-grid>
+    
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="primary" >Origen:</ion-label>
+            <ion-input #input_ori [(ngModel)]="origen" id="input_ori" name="input_ori"  type="text" clearInput="true"  placeholder="coordenada" required="true" (keyup.enter)="validaOrigen()" (keydown.tab)="validaOrigen()" ></ion-input>
+            <ion-icon name="pin" color="primary" slot="end" ></ion-icon>
+          </ion-item>
+          
+        </ion-col>
+      </ion-row>
+      
+      
+    
+    
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="primary" >Cód:</ion-label>
+            <ion-input [readonly]="isReadOnlyCodigo" #input_codigo [(ngModel)]="producto" id="input_codigo" name="input_codigo" type="text" clearInput="true"  placeholder="producto" required="true" (keyup.enter)="producto_control()"  ></ion-input>
+            <ion-icon name="search" color="primary" slot="end" (click)="listarProductos()"></ion-icon>
+            <ion-icon name="eye" color="primary" slot="end" [routerLink]="['/busqueda-producto/'+ producto]"></ion-icon>
+          </ion-item>
+          
+        </ion-col>
+      </ion-row>
+     
+      
+    
+    <ion-row>
+      <ion-col size="9">
+        <ion-item >
+          <p  style="font-size: 0.9rem;"><strong>Bulto: </strong>{{codbulto}}</p>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <ion-icon name="barcode" slot="end" (click)="msgBulto(1)"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">
+        <ion-item >
+          <ion-label  position="floating">Solic:</ion-label>
+            <ion-input  readonly  clearInput="true" inputmode="text" [(ngModel)]="solicitado" required="true"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4">
+        <ion-item >
+          <ion-label  position="floating">Armado:</ion-label>
+          <ion-input  readonly  clearInput="true"   inputmode="text" [(ngModel)]="armado"  required="true"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4">
+        <ion-item >
+          <ion-label  position="floating">Pend:</ion-label>
+            <ion-input  readonly  clearInput="true"   inputmode="text" [(ngModel)]="pendiente"  required="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="9">
+        <ion-item>
+          <ion-label color="primary" >Can:</ion-label>
+          <ion-input [readonly]="isReadOnlyCantidad" #input_cant  type="number" [(ngModel)]="cantidad" clearInput="true"  placeholder="cantidad" required="true" (keyup.enter)="cantidad_control()" (keydown.tab)="cantidad_control()" ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <p  style="font-size: 0.9rem;"><strong>{{unidad}}</strong></p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label color="primary" >Vd:</ion-label>
+          <ion-input #input_void [readonly]="isReadOnlyVoid" style="font-size: 15px;" type="text" [(ngModel)]="void1" placeholder="void" required="true" (keyup.enter)="void_control()"  ></ion-input>
+        </ion-item>
+      </ion-col>
+   
+      <ion-col size="2">
+        <ion-item>
+        
+          
+            <ion-icon name="arrow-back"  (click)="void_anterior()"  ></ion-icon>
+          
+        </ion-item>
+      </ion-col>
+      <ion-col size="2">
+        <ion-item>
+          
+          
+            <ion-icon name="arrow-forward"  (click)="void_siguiente()"  ></ion-icon>
+          
+          
+        </ion-item>
+      </ion-col>
+      <ion-col size="2">
+        <ion-item>
+          
+            <ion-icon name="close" (click)="void_delete()" ></ion-icon>
+          
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label color="primary" >Obs:</ion-label>
+          <ion-input #input_obs [readonly]="isReadOnlyObs" [(ngModel)]="observacion" type="text" clearInput="true" (keyup.enter)="obs_enter()"  placeholder="observación" ></ion-input>
+          <ion-icon name="reorder" color="primary" slot="end" ></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label color="primary" >Destino:</ion-label>
+          <ion-input #input_des [readonly]="isReadOnlyDestino" [(ngModel)]="destino" type="text" clearInput="true" (keyup.enter)="guardaArmado()" placeholder="coordenada"    ></ion-input>
+          <ion-icon name="pin" color="primary" slot="end" ></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-list>
+</ion-content>

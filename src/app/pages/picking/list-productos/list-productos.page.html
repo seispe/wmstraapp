@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title>N. Consol {{id}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <ion-grid >
+      <ion-row   class="ion-text-center " style="background-size: auto;background-color: #3880ff;height: 25px;padding: 0%;">
+       
+        <ion-col style="font-size:0.5rem;" size="1" >
+            Cant
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="2" >
+            Prod
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="1"  >
+            Coor Suge
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="1"  >
+          Cant
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="4"  >
+            Descripcion
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="2"  >
+          Pedido
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="1"  >
+          Orden
+        </ion-col>
+        
+      </ion-row>
+
+    <ion-row *ngFor="let item of productos"  class="ion-text-center ">
+
+    <ion-col style="font-size:0.5rem;" size="1" >
+        {{item.cant_coordenada}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="2" >
+        {{item.producto}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="1"  >
+        {{item.coor_sugerida}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="1"  >
+      {{item.can}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="4"  >
+        {{item.descripcion}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="2"  >
+      {{item.pedido}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="1"  >
+      {{item.coor_orden}}
+    </ion-col>
+      
+    </ion-row>
+
+    </ion-grid> -->
+
+    <ion-list>
+      <ion-item *ngFor="let item of productos" > 
+        <ion-text>
+          <p style="font-size: medium; font-weight: bold;">{{item.producto}}</p>
+          <p style="font-size: small;"><strong>{{item.coor_sugerida}}:</strong> {{item.cant_coordenada}}<strong>   Cant:</strong> {{item.can}}    <strong>{{item.pedido}}</strong></p>
+          <p style="font-size: small;">{{item.descripcion}}</p>
+        </ion-text>
+      </ion-item>
+    </ion-list>
+  
+
+ 
+
+</ion-content>

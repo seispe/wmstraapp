@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()">atrás
+        <ion-icon name="arrow-back" color="light" slot="start" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>N. Consol {{consolidado}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/list-productos/'+ consolidado+'/'+area]"><ion-icon name="search"  ></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-list>
+
+    <ion-item>
+      <p style="font-size: 0.9rem;">Sugerido: {{origen_sugerido}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" position="floating">Origen:</ion-label>
+      <ion-input #input_origen id="inori" name="inori"  type="text" [(ngModel)]="origen"    clearInput="true"  placeholder="Ingrese la ruta de origen" required="true"  (keyup.enter)="origen_control()" (keydown.tab)="origen_control()"></ion-input>
+     <ion-icon name="pin" color="primary" slot="end" ></ion-icon>
+    </ion-item>
+
+    <!-- <ion-item >
+      <p  style="font-size: 0.9rem;">{{producto_sugerido}}</p>
+    </ion-item> -->
+   
+
+    <ion-item>
+      <ion-label color="primary" position="floating">Producto:</ion-label>
+      <ion-input #input_producto [readonly]="isReadOnlyProduct"  type="text" [(ngModel)]="producto"    clearInput="true"  placeholder="Ingrese el producto" required="true"  (keyup.enter)="producto_control()" ></ion-input>
+     <ion-icon name="eye" color="primary" slot="end" [routerLink]="['/busqueda-producto/'+ producto_sugerido]" ></ion-icon>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <ion-item>
+            <ion-label color="primary"  position="floating">Solic.:</ion-label>
+            <ion-input  readonly  clearInput="true" [(ngModel)]="solicitado"  inputmode="text"  required="true"></ion-input>
+          </ion-item>
+
+        </ion-col>
+        <ion-col size="3">
+          <ion-item>
+            <ion-label color="primary"  position="floating">Disp.:</ion-label>
+            <ion-input  readonly  clearInput="true" [(ngModel)]="disponible"  inputmode="text"  required="true"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3">
+          <ion-item>
+            <ion-label color="primary"  position="floating">Proc.:</ion-label>
+            <ion-input  readonly  clearInput="true" [(ngModel)]="cantidad_procesado"  inputmode="text"  required="true"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3">
+          <ion-item>
+            <ion-label color="primary"  position="floating">Pend.:</ion-label>
+            <ion-input  readonly  clearInput="true" [(ngModel)]="pendiente"  inputmode="text"  required="true"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item>
+      <ion-label color="primary" position="floating">Cantidad:</ion-label>
+      <ion-input #input_cantidad [readonly]="isReadOnlyCantidad"  type="number" [(ngModel)]="cantidad"    clearInput="true"  placeholder="cantidad" required="true" (keyup.enter)="cantidad_control()" (keydown.tab)="cantidad_control()"></ion-input>
+     <ion-icon name="filing" color="primary" slot="end" ></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" position="floating">Destino:</ion-label>
+      <ion-input #input_destino [readonly]="isReadOnlyDestino"  type="text" [(ngModel)]="destino"    clearInput="true"  placeholder="Ingrese la ruta de destino" required="true"  (keyup.enter)="proesaPicking()"></ion-input>
+     <ion-icon name="map" color="primary" slot="end" ></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+  <ion-footer>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="5">
+         <ion-button expand="block" color="primary" block (click)="productoAnterior()" *ngIf="proceso>0">
+          Ant.
+         </ion-button >
+        </ion-col>
+        <ion-col size="2">
+          <p>{{proceso+1}} / {{max+1}}</p>
+        </ion-col>
+        <ion-col size="5">
+          <ion-button expand="block" color="primary" block (click)="productoSiguiente()" *ngIf="proceso<max">
+           Sig. 
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>

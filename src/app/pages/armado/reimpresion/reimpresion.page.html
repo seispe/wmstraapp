@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title>IMPRESIONES</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/impresora/']"></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar #bul animated color="light" [(ngModel)]="bulto" name="bul" id="bul" showCancelButton="true" placeholder="Ingrese el #bulto" required="true" (keyup.enter)="onBulto()"></ion-searchbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label color="primary">Ruta:</ion-label>
+          <ion-input readonly clearInput="true" [(ngModel)]="ruta" inputmode="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label color="primary" position="floating">Cliente:</ion-label>
+          <ion-input readonly clearInput="true" [(ngModel)]="cliente" inputmode="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label color="primary">Pedido:</ion-label>
+          <ion-input readonly clearInput="true" [(ngModel)]="pedido" inputmode="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label color="primary">Consolidado:</ion-label>
+          <ion-input readonly clearInput="true" [(ngModel)]="consolidado" inputmode="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label color="primary">Observación:</ion-label>
+          <ion-input clearInput="true" [(ngModel)]="obs" inputmode="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button color="primary" expand="block" (click)="onImpresion()">IMPRIMIR</ion-button>
+</ion-list>
+</ion-content>

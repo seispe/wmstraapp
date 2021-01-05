@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>INGRESO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+     <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+  
+    <img style="display: block;
+    margin-left: auto;
+    margin-right: auto;" src="../../../assets/logo.png" alt=""/>
+  
+  
+  <br>
+  <br>
+  <br>
+  <!-- form with input text and submit buttons -->
+  <form >
+     
+      <ion-item>
+          <ion-input type="text"  [(ngModel)]="Usuario" placeholder="Ingrese su usuario" name="email" required>
+          </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-input type="password"  [(ngModel)]="Password" placeholder="Ingrese la clave" name="password" required>
+          </ion-input>
+      </ion-item>
+  </form>
+  <ion-row>
+      <ion-col size="12">
+          <ion-button expand="block"  type="button" (click)="loginUser()">INGRESAR</ion-button>
+      </ion-col>
+      <br>
+      <br>
+      <ion-col size="12">
+          <ion-button expand="block" fill="clear" (click)="contrasenia()">
+              <b></b>
+          </ion-button>
+      </ion-col>
+      <ion-col size="12">
+      </ion-col>
+      <ion-col size="12">
+      </ion-col>
+      <ion-col size="12">
+      </ion-col>
+  </ion-row>
+</ion-content>

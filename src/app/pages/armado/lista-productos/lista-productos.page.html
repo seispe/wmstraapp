@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Artículos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let articulo of articulos" > 
+      <ion-text>
+        <p style="font-size: medium; font-weight: bold;">{{articulo.producto}}</p>
+        <p style="font-size: small;">Por Armar: {{articulo.PorArmar}}</p>
+        <p style="font-size: small;">{{articulo.descrpcion}}</p>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>
