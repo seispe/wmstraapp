@@ -13,7 +13,6 @@ export class ArmadoPedidosPage implements OnInit {
 usuario:any;
 impresora:string;
 filtro:string="";
-toggle:boolean;
 area:string="00";
 pedidos:[];
   constructor(private route:NavController, private webService:WsArmadoService, private storage:Storage) { }
@@ -49,19 +48,8 @@ pedidos:[];
   }
 
   onFiltro(){
-    switch (this.toggle) {
-        case true:
-          this.area="09";
-          this.onCargaPedidos(this.filtro,'09','1');
-          break;
-        case false:
-          this.area="00";
-          this.onCargaPedidos(this.filtro,'00','0');
-          break;
-        default:
-          this.onCargaPedidos(this.filtro,'00','0');
-          break;
-    }
+    this.onCargaPedidos(this.filtro,'00','0');
+    
   }
 
   onClick(ped){
