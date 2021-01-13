@@ -113,8 +113,6 @@ export class MovimientoPage implements OnInit {
   }
 
   onEnterProducto(){
-    //console.log(this.codigo+" "+this.coordenada);
-
     if(this.codigo!="" && this.coordenada!=""){
       this.webService.presentLoading().then(()=>{
         this.webService.validarProducto(this.codigo).pipe(

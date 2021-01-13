@@ -25,8 +25,6 @@ export class ListProductosPage implements OnInit {
       this.usuario=usuario.usuario.usuario;
       this.id = this.route.snapshot.paramMap.get('id');
       this.area = this.route.snapshot.paramMap.get('area');
-      //console.log(this.usuario);
-      //console.log(this.id);
       this.cargarArticulos(this.id,this.usuario,this.area);
     });
   }
@@ -39,7 +37,6 @@ export class ListProductosPage implements OnInit {
         }))
       .subscribe((data=>{
         let datos:any=data
-        //console.log(datos);
         if(datos.status='OK'){
           this.productos=datos.productos;
         }else{

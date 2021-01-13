@@ -36,7 +36,6 @@ export class LogisticaPage implements OnInit {
         }))
       .subscribe((data=>{
         let datos:any=data
-        //console.log(datos);
         if (datos.status=="Ok") {
          this.cliente=datos.pedidos.soc_cliente;
          this.ciudad=datos.pedidos.ciudad;
@@ -59,7 +58,6 @@ export class LogisticaPage implements OnInit {
         }))
       .subscribe((data=>{
         let datos:any=data
-        //console.log(datos);
         if (datos.status=="Ok") {
          this.webService.presentToast(datos.logistica.SALIDA);
          this.pedido="";

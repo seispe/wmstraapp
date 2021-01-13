@@ -66,10 +66,6 @@ loginUser(){
                 }))
               .subscribe((data=>{
                 let datos:any=data
-
-                //console.log(datos);
-                
-
                 if(datos.status=="Ok"){
                   this.Datos=
                     {

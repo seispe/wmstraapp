@@ -61,7 +61,6 @@ impresoras=[];
             role: 'cancel',
             cssClass: 'primary',
             handler: () => {
-              //console.log('Confirm Cancel');
             }
           }, 
           {

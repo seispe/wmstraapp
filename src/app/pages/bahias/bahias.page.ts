@@ -33,7 +33,7 @@ export class BahiasPage implements OnInit {
     if (this.idbulto!="") {
       this.coordenada.setFocus();
     }else {
-      //console.log("error");
+      
     }
   }
 
@@ -59,7 +59,7 @@ export class BahiasPage implements OnInit {
           }))
       })
     }else{
-      //console.log("vacio");
+      
     }
 
   }

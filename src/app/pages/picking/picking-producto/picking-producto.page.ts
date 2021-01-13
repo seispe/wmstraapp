@@ -63,12 +63,8 @@ ngOnInit(){
           let datos:any=data
           if(datos.status=="Ok"){
             if(datos.productos.length>0){
-         
-             
               this.productos=datos.productos;
-              // //console.log(datos.productos);
               this.max=datos.productos.length-1;
-      
               this.origen_sugerido=datos.productos[0]['coordenada'];
               this.producto_sugerido=datos.productos[0]['producto'];
               this.producto=this.producto_sugerido;
@@ -137,7 +133,6 @@ ngOnInit(){
           .subscribe((data=>{
             let datos:any=data
             if(datos.status=="Ok"){
-              //console.log(datos)
               if(datos.existe.existe=="1"){
 
                 this.webService_pk.presentLoading().then(()=>{
@@ -167,7 +162,6 @@ ngOnInit(){
                                   await this.webService_pk.loading.dismiss();
                               }))
                             .subscribe((data=>{
-                              //console.log(data);
                               let datos:any=data
                               this.webService.presentToast(datos.info);
                               if(datos.status=="Ok"){
@@ -176,7 +170,6 @@ ngOnInit(){
                                     if(parseInt(this.cantidad.toString())==parseInt(this.pendiente.toString())){
                                       this.productos.splice(this.proceso,1);
                                     }
-                                    //console.log(this.productos);
                                     this.max=this.productos.length-1;
                                     this.proceso=0;
                                     this.origen_sugerido=this.productos[0]['coordenada'];
@@ -184,7 +177,6 @@ ngOnInit(){
                                     this.origen="";
                                     this.producto=this.producto_sugerido;
                                     this.cantidad=null;
-                                    //this.destino="";
                                     this.solicitado=0;
                                     this.disponible=0;
                                     this.cantidad_procesado=0;
