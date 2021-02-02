@@ -13,19 +13,11 @@
 
     <ion-grid>
       <ion-row>
-        <ion-col size="6">
+        <ion-col size="12">
           <ion-item>
             <ion-label color="primary"  position="floating">Producto:</ion-label>
             <ion-input  readonly  clearInput="true" [(ngModel)]="producto"  inputmode="text"  ></ion-input>
           </ion-item>
-        </ion-col>
-        <ion-col size="6">
-            <ion-item>
-              <ion-label color="primary"  position="floating">Rotación:</ion-label>
-              <ion-input color="success" *ngIf="color_rotacion=='ALTA'"  readonly  clearInput="true" [(ngModel)]="rotacion"   inputmode="text"  ></ion-input>
-              <ion-input color="warning" *ngIf="color_rotacion=='MEDIA'"  readonly  clearInput="true" [(ngModel)]="rotacion"   inputmode="text"  ></ion-input>
-              <ion-input color="danger" *ngIf="color_rotacion=='BAJA'"  readonly  clearInput="true" [(ngModel)]="rotacion"   inputmode="text"  ></ion-input>
-           </ion-item>
         </ion-col>
       </ion-row>
     </ion-grid>

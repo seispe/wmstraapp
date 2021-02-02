@@ -12,11 +12,9 @@ import { MenuController } from '@ionic/angular';
 export class ConsultaProdPage implements OnInit {
   texto:string;
   producto:string;
-  rotacion:string;
   descripcion:string;
   ubicacion:string;
-  color_rotacion:string;
-
+  
   constructor(private webService:WebServiceService,private storage:Storage,private menu:MenuController) { 
     this.menu.enable(true,'first');
   }
@@ -45,16 +43,13 @@ export class ConsultaProdPage implements OnInit {
                       let datos:any=data
                       if(datos.status=="Ok"){
                           this.producto=datos.info.producto;
-                          this.rotacion=datos.info.rotacion;
                           this.descripcion=datos.info.descripcion;
                           this.ubicacion=datos.info.coordenada;
-                          let rota =datos.info.rotacion.split(")");
-                          this.color_rotacion=rota[1];
+                          
                         
                       }else{
                         this.webService.presentToast(datos.mensaje).then(()=>{
                           this.producto="";
-                          this.rotacion="";
                           this.descripcion="";
                           this.ubicacion="";
                         })
@@ -66,7 +61,6 @@ export class ConsultaProdPage implements OnInit {
           
           this.webService.presentToast(datos.mensaje).then(()=>{
                           this.producto="";
-                          this.rotacion="";
                           this.descripcion="";
                           this.ubicacion="";
                           this.texto="";

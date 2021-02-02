@@ -14,8 +14,7 @@ export class MovimientoPage implements OnInit {
   codigo:string="";
   cantidad:number;
   ubicacion:string="";
-  rotacion:string="";
-  color_rotacion:string="";
+  
   cantidad_mover:number;
   destino:string="";
   //isReadOnlyProduct:boolean=true;
@@ -24,7 +23,6 @@ export class MovimientoPage implements OnInit {
   usuario:any;
   @ViewChild('origen',{static:true}) origen;
   @ViewChild('producto',{static:true}) producto;
-  @ViewChild('inp_rotacion',{static:true}) inp_rotacion;
   @ViewChild('input_cantidad_mover',{static:true}) input_cantidad_mover;
   @ViewChild('input_destino',{static:true}) input_destino;
 
@@ -61,8 +59,6 @@ export class MovimientoPage implements OnInit {
                 //this.codigo="";
                 this.cantidad=0;
                 this.ubicacion="";
-                this.rotacion="";
-                this.color_rotacion="";
                 this.cantidad_mover=null;
                 this.destino="";
                 //this.isReadOnlyProduct=false;
@@ -79,8 +75,6 @@ export class MovimientoPage implements OnInit {
                 this.codigo="";
                 this.cantidad=0;
                 this.ubicacion="";
-                this.rotacion="";
-                this.color_rotacion="";
                 this.cantidad_mover=null;
                 this.destino="";
                 //this.isReadOnlyProduct=true;
@@ -95,8 +89,6 @@ export class MovimientoPage implements OnInit {
                 this.codigo="";
                 this.cantidad=0;
                 this.ubicacion="";
-                this.rotacion="";
-                this.color_rotacion="";
                 this.cantidad_mover=null;
                 this.destino="";
                 //this.isReadOnlyProduct=true;
@@ -135,9 +127,6 @@ export class MovimientoPage implements OnInit {
                   if(datos.status=="Ok"){
                     this.cantidad=datos.info.cantidad;
                     this.ubicacion=datos.info.coordenada
-                    this.rotacion=datos.info.rotacion;
-                    let rota =datos.info.rotacion.split(")");
-                    this.color_rotacion=rota[1];
                     this.isReadOnlyCantidad=false;
                     this.input_cantidad_mover.setFocus();
                   }else{
@@ -145,8 +134,6 @@ export class MovimientoPage implements OnInit {
                       this.codigo="";
                       this.cantidad=0;
                       this.ubicacion="";
-                      this.rotacion="";
-                      this.color_rotacion="";
                       this.cantidad_mover=null;
                       this.destino="";
                       //this.isReadOnlyProduct=false;
@@ -164,8 +151,6 @@ export class MovimientoPage implements OnInit {
               this.codigo="";
               this.cantidad=0;
               this.ubicacion="";
-              this.rotacion="";
-              this.color_rotacion="";
               this.cantidad_mover=null;
               this.destino="";
               //this.isReadOnlyProduct=false;

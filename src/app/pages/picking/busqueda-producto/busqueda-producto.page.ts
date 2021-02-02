@@ -14,10 +14,8 @@ export class BusquedaProductoPage implements OnInit {
 
   texto:string;
   producto:string;
-  rotacion:string;
   descripcion:string;
   ubicacion:string;
-  color_rotacion:string;
   id: string;
   constructor(private webService:WebServiceService,private storage:Storage,private route:ActivatedRoute) { 
     
@@ -51,16 +49,12 @@ export class BusquedaProductoPage implements OnInit {
                       let datos:any=data
                       if(datos.status=="Ok"){
                           this.producto=datos.info.producto;
-                          this.rotacion=datos.info.rotacion;
                           this.descripcion=datos.info.descripcion;
                           this.ubicacion=datos.info.coordenada;
-                          let rota =datos.info.rotacion.split(")");
-                          this.color_rotacion=rota[1];
-                        
+                          
                       }else{
                         this.webService.presentToast(datos.mensaje).then(()=>{
                           this.producto="";
-                          this.rotacion="";
                           this.descripcion="";
                           this.ubicacion="";
                         })
@@ -72,7 +66,6 @@ export class BusquedaProductoPage implements OnInit {
           
           this.webService.presentToast(datos.mensaje).then(()=>{
                           this.producto="";
-                          this.rotacion="";
                           this.descripcion="";
                           this.ubicacion="";
                           this.texto="";
