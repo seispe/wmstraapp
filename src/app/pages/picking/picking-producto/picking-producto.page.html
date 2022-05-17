@@ -22,7 +22,7 @@
 
     <ion-item>
       <ion-label color="primary" position="floating">Origen:</ion-label>
-      <ion-input #input_origen id="inori" name="inori"  type="text" [(ngModel)]="origen"    clearInput="true"  placeholder="Ingrese la ruta de origen" required="true"  (keyup.enter)="origen_control()" (keydown.tab)="origen_control()"></ion-input>
+      <ion-input #input_origen id="inori" name="inori"  inputmode="text" [(ngModel)]="origen"    clearInput="true"  placeholder="Ingrese la ruta de origen" required="true"  (keydown.enter)="origen_control()"></ion-input>
      <ion-icon name="pin" color="primary" slot="end" ></ion-icon>
     </ion-item>
 
@@ -33,7 +33,7 @@
 
     <ion-item>
       <ion-label color="primary" position="floating">Producto:</ion-label>
-      <ion-input #input_producto [readonly]="isReadOnlyProduct"  type="text" [(ngModel)]="producto"    clearInput="true"  placeholder="Ingrese el producto" required="true"  (keyup.enter)="producto_control()" ></ion-input>
+      <ion-input #input_producto [readonly]="isReadOnlyProduct"  inputmode="text" [(ngModel)]="producto"    clearInput="true"  placeholder="Ingrese el producto" required="true"  (keydown.enter)="producto_control()" ></ion-input>
      <ion-icon name="eye" color="primary" slot="end" [routerLink]="['/busqueda-producto/'+ producto_sugerido]" ></ion-icon>
     </ion-item>
 
@@ -69,12 +69,12 @@
 
     <ion-item>
       <ion-label color="primary" position="floating">Cantidad:</ion-label>
-      <ion-input #input_cantidad [readonly]="isReadOnlyCantidad"  type="number" [(ngModel)]="cantidad"    clearInput="true"  placeholder="cantidad" required="true" (keyup.enter)="cantidad_control()" (keydown.tab)="cantidad_control()"></ion-input>
+      <ion-input #input_cantidad [readonly]="isReadOnlyCantidad"  inputmode="text" [(ngModel)]="cantidad"    clearInput="true"  placeholder="cantidad" required="true" (keydown.enter)="cantidad_control()" ></ion-input>
      <ion-icon name="filing" color="primary" slot="end" ></ion-icon>
     </ion-item>
     <ion-item>
       <ion-label color="primary" position="floating">Destino:</ion-label>
-      <ion-input #input_destino [readonly]="isReadOnlyDestino"  type="text" [(ngModel)]="destino"    clearInput="true"  placeholder="Ingrese la ruta de destino" required="true"  (keyup.enter)="proesaPicking()"></ion-input>
+      <ion-input #input_destino [readonly]="isReadOnlyDestino"  inputmode="text" [(ngModel)]="destino"    clearInput="true"  placeholder="Ingrese la ruta de destino" required="true"  (keydown.enter)="proesaPicking()"></ion-input>
      <ion-icon name="map" color="primary" slot="end" ></ion-icon>
     </ion-item>
   </ion-list>

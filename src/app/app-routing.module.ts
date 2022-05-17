@@ -45,10 +45,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/picking/list-productos/list-productos.module').then( m => m.ListProductosPageModule)
   },
   {
-    path: 'recepcion',
-    loadChildren: () => import('./pages/recepcion/recepcion.module').then( m => m.RecepcionPageModule)
-  },
-  {
     path: 'logistica',
     loadChildren: () => import('./pages/logistica/logistica.module').then( m => m.LogisticaPageModule)
   },
@@ -95,7 +91,20 @@ const routes: Routes = [
   {
     path: 'lista-productos/:ped/:area',
     loadChildren: () => import('./pages/armado/lista-productos/lista-productos.module').then( m => m.ListaProductosPageModule)
+  },
+  {
+    path: 'lista-productos/:doc',
+    loadChildren: () => import('./pages/recepcion/lista-productos/lista-productos.module').then( m => m.ListaProductosPageModule)
+  },
+  {
+    path: 'recepcion-documento',
+    loadChildren: () => import('./pages/recepcion/recepcion-documento/recepcion-documento.module').then( m => m.RecepcionDocumentoPageModule)
+  },
+  {
+    path: 'recepcion-producto/:doc',
+    loadChildren: () => import('./pages/recepcion/recepcion-producto/recepcion-producto.module').then( m => m.RecepcionProductoPageModule)
   }
+
 
 
 

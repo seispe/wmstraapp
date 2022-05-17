@@ -31,7 +31,7 @@
     </ion-grid>
     <ion-item>
       <ion-label color="primary" position="floating">Cantidad:</ion-label>
-      <ion-input  #input_cantidad_mover type="number" (keyup.enter)="val_cantidad()"  [readonly]="isReadOnlyCantidad"   clearInput="true"  [(ngModel)]="cantidad_mover"  inputmode="number" placeholder="Ingrese la cantidad a mover" required="true"></ion-input >
+      <ion-input  #input_cantidad_mover type="number" (keyup.enter)="val_cantidad()" (keydown.tab)="val_cantidad()" [readonly]="isReadOnlyCantidad"   clearInput="true"  [(ngModel)]="cantidad_mover"  inputmode="number" placeholder="Ingrese la cantidad a mover" required="true"></ion-input >
     </ion-item>
     <ion-item>
       <ion-label color="primary" position="floating">Destino:</ion-label>

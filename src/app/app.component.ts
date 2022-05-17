@@ -14,6 +14,12 @@ export class AppComponent {
   
   public appPages = [
     {
+      title: 'Recepción',
+      url: '/recepcion-documento',
+      icon: 'apps',
+      id: 'recepcion-documento'
+    },
+    {
       title: 'Movimientos',
       url: '/movimiento',
       icon: 'home',

@@ -25,7 +25,7 @@
     <ion-item button *ngFor="let pedido of pedidos" (click)="onClick(pedido)"> 
       <ion-label>
         <h2>{{pedido.pedido}}</h2>
-        <h3>{{pedido.ciudad}}</h3>
+        <h3>{{pedido.ciudad + ', ' + pedido.prioridad + ', ' + pedido.Estado}}</h3>
         <p>{{pedido.fechapedido + ', ' + pedido.usuario}}</p>
         <p>{{pedido.consol + ', ' + pedido.soc_cliente}}</p>
       </ion-label>

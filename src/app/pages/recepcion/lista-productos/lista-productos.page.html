@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{documento}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ <ion-grid >
+      <ion-row   class="ion-text-center " style="background-size: auto;background-color: #85f077ee;height: 25px;padding: 0%;">
+       
+        <ion-col style="font-size:0.5rem;" size="3" >
+            Prod
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="1"  >
+            Sol
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="1"  >
+          Pend
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="1"  >
+            Proc
+        </ion-col>
+        <ion-col style="font-size:0.5rem;" size="6"  >
+          Det
+        </ion-col>
+       
+        
+      </ion-row>
+
+    <ion-row *ngFor="let item of productos"  class="ion-text-center ">
+
+    <ion-col style="font-size:0.5rem;" size="3" >
+        {{item.producto}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="1" >
+        {{item.cantSolicitada}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="1"  >
+        {{item.cantPendiente}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="1"  >
+      {{item.cantProcesada}}
+    </ion-col>
+
+    <ion-col style="font-size:0.5rem;" size="6"  >
+        {{item.detalle}}
+    </ion-col>
+
+      
+    </ion-row>
+
+    </ion-grid>
+
+</ion-content>

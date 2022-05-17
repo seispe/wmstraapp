@@ -36,7 +36,7 @@
         <ion-col size="12">
           <ion-item>
             <ion-label color="primary" >Origen:</ion-label>
-            <ion-input #input_ori [(ngModel)]="origen" id="input_ori" name="input_ori"  type="text" clearInput="true"  placeholder="coordenada" required="true" (keyup.enter)="validaOrigen()" (keydown.tab)="validaOrigen()" ></ion-input>
+            <ion-input #input_ori [(ngModel)]="origen" id="input_ori" name="input_ori"  inputmode="text" clearInput="true"  placeholder="coordenada" required="true" (keydown.enter)="validaOrigen()" ></ion-input>
             <ion-icon name="pin" color="primary" slot="end" ></ion-icon>
           </ion-item>
           
@@ -50,7 +50,7 @@
         <ion-col size="12">
           <ion-item>
             <ion-label color="primary" >Cód:</ion-label>
-            <ion-input [readonly]="isReadOnlyCodigo" #input_codigo [(ngModel)]="producto" id="input_codigo" name="input_codigo" type="text" clearInput="true"  placeholder="producto" required="true" (keyup.enter)="producto_control()"  ></ion-input>
+            <ion-input [readonly]="isReadOnlyCodigo" #input_codigo [(ngModel)]="producto" id="input_codigo" name="input_codigo" inputmode="text" clearInput="true"  placeholder="producto" required="true" (keydown.enter)="producto_control()"  ></ion-input>
             <ion-icon name="search" color="primary" slot="end" (click)="listarProductos()"></ion-icon>
             <ion-icon name="eye" color="primary" slot="end" [routerLink]="['/busqueda-producto/'+ producto]"></ion-icon>
           </ion-item>
@@ -96,7 +96,7 @@
       <ion-col size="9">
         <ion-item>
           <ion-label color="primary" >Can:</ion-label>
-          <ion-input [readonly]="isReadOnlyCantidad" #input_cant  type="number" [(ngModel)]="cantidad" clearInput="true"  placeholder="cantidad" required="true" (keyup.enter)="cantidad_control()" (keydown.tab)="cantidad_control()" ></ion-input>
+          <ion-input [readonly]="isReadOnlyCantidad" #input_cant  inputmode="text" [(ngModel)]="cantidad" clearInput="true"  placeholder="cantidad" required="true" (keydown.enter)="cantidad_control()" ></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="3">
@@ -109,7 +109,7 @@
       <ion-col size="12">
         <ion-item>
           <ion-label color="primary" >Obs:</ion-label>
-          <ion-input #input_obs [readonly]="isReadOnlyObs" [(ngModel)]="observacion" type="text" clearInput="true" (keyup.enter)="obs_enter()"  placeholder="observación" ></ion-input>
+          <ion-input #input_obs [readonly]="isReadOnlyObs" [(ngModel)]="observacion" inputmode="text" clearInput="true" (keydown.enter)="obs_enter()"  placeholder="observación" ></ion-input>
           <ion-icon name="reorder" color="primary" slot="end" ></ion-icon>
         </ion-item>
       </ion-col>
@@ -118,7 +118,7 @@
       <ion-col size="12">
         <ion-item>
           <ion-label color="primary" >Destino:</ion-label>
-          <ion-input #input_des [readonly]="isReadOnlyDestino" [(ngModel)]="destino" type="text" clearInput="true" (keyup.enter)="guardaArmado()" placeholder="coordenada"    ></ion-input>
+          <ion-input #input_des [readonly]="isReadOnlyDestino" [(ngModel)]="destino" inputmode="text" clearInput="true" (keydown.enter)="guardaArmado()" placeholder="coordenada"    ></ion-input>
           <ion-icon name="pin" color="primary" slot="end" ></ion-icon>
         </ion-item>
       </ion-col>
